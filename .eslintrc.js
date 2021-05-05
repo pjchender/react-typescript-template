@@ -25,7 +25,7 @@ module.exports = {
     // add this line if using 'airbnb-typescript'
     project: './tsconfig.json',
   },
-  plugins: ['react', 'react-hooks', '@typescript-eslint'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'simple-import-sort'],
 
   settings: {
     // // 避免出現 Unable to resolve path to module
@@ -38,9 +38,16 @@ module.exports = {
   },
 
   rules: {
+    // https://github.com/lydell/eslint-plugin-simple-import-sort
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    'import/order': 'off',
+
     /* 避免出現 JSX not allowed in files with extension '.tsx' */
     // 'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
-
     /* 避免出現 'React' was used before it was defined */
     // 'import/extensions': [
     //   'error',
@@ -52,11 +59,9 @@ module.exports = {
     //     tsx: 'never',
     //   },
     // ],
-
     /* 避免出現 'React' was used before it was defined 的錯誤 */
     // 'no-use-before-define': 'off',
     // '@typescript-eslint/no-use-before-define': ['error'],
-
     /* 必須建議使用 default export */
     // 'import/prefer-default-export': 'warn',
   },
