@@ -8,12 +8,12 @@ module.exports = {
     // instead of using airbnb, use airbnb-typescript with TS project
     'airbnb-typescript',
     'plugin:react/recommended',
-    'prettier',
-
+    'plugin:prettier/recommended',
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#eslint-configs
     // 如果已經有使用 airbnb-typescript，就不需要加上下面這行
     // 'plugin:@typescript-eslint/recommended'
   ],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'simple-import-sort'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -25,8 +25,6 @@ module.exports = {
     // add this line if using 'airbnb-typescript'
     project: './tsconfig.json',
   },
-  plugins: ['react', 'react-hooks', '@typescript-eslint', 'simple-import-sort'],
-
   settings: {
     // // 避免出現 Unable to resolve path to module
     // 'import/resolver': {
@@ -38,6 +36,7 @@ module.exports = {
   },
 
   rules: {
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     // https://github.com/lydell/eslint-plugin-simple-import-sort
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
