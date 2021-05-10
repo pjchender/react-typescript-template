@@ -23,7 +23,8 @@ module.exports = {
     sourceType: 'module',
 
     // add this line if using 'airbnb-typescript'
-    project: './tsconfig.json',
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
   },
   settings: {
     // // 避免出現 Unable to resolve path to module
@@ -44,6 +45,11 @@ module.exports = {
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
     'import/order': 'off',
+
+    // new JSX transform
+    // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
 
     /* 避免出現 JSX not allowed in files with extension '.tsx' */
     // 'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
