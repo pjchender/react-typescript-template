@@ -1,7 +1,5 @@
 import './App.css';
 
-import React from 'react';
-
 import Foo from './Foo';
 import logo from './logo.svg';
 
