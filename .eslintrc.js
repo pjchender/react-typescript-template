@@ -16,7 +16,6 @@ module.exports = {
     'airbnb-typescript',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jest/recommended',
 
@@ -26,6 +25,7 @@ module.exports = {
 
     // 讓 @typescript-eslint 能夠在 Lint 顯示型別資訊
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser', // 讓 ESLint 可以了解 TS 的語法
   parserOptions: {
@@ -50,8 +50,6 @@ module.exports = {
   },
 
   rules: {
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-
     // https://github.com/lydell/eslint-plugin-simple-import-sort
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
