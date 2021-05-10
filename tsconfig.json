@@ -2,10 +2,10 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src", // 匯入模組時，路徑可以使用從 baseUrl 開始，而不需要 ./../ 這種寫法
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true, // 確保檔案的大小寫一致，避免某些作業系統對大小寫不敏感
+    "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -16,35 +16,18 @@
     ],
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true, // 不要產生編譯後的結果（讓其他編譯器 babel 去作用）僅讓 editor 可以做檢查
-    "noFallthroughCasesInSwitch": true, // 確保 switch case 都會有 break 或 return
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    // 透過 path 可以 re-map imports 檔案的路徑（根據 baseUrl 的設定）
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
     "resolveJsonModule": true,
     "skipDefaultLibCheck": true,
-    "skipLibCheck": true, // 當在 node_modules 中有兩份重複的套件型別定義檔，但內容可能有差異時，使用此選項可以略過檢查，以減少 TS 編譯的時間
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "es5"
   },
   "include": [
-    "src/**/*",
-    "next-env.d.ts",
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  // exclude 是把已經在 include 中有設定的檔案 exclude 掉，而不是從整個 codebase exclude
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts"
+    "src"
   ]
 }

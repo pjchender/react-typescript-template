@@ -2,10 +2,20 @@
 
 ## ESLint
 
+> 參考設定：
+>
+> - [create-exposed-app](https://github.com/iamturns/create-exposed-app/blob/master/.eslintrc.js)：eslint-config-airbnb-typescript 的參考設定。
+> - 
+
 - `eslint-config-prettier`: used for disable all formatting-related ESLint rules.
 - `React Error : is declared but its value is never read`：參考 [Introducing the New JSX Transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint)，升級到 react v17 後，不需要 `import React` 的 ESLint 設定
 
 ### @typescript-eslint/parser
+
+> - [Getting Started - Linting your TypeScript Codebase](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)：說明整個安裝設定流程 @ Github
+> - [Getting Started - Linting with Type Information](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/TYPED_LINTING.md)：讓 Lint 可以顯示型別的訊息 @ Github
+
+#### 錯誤處理：Parsing error: "parserOptions.project" has been set for @typescript-eslint/parser.
 
 ![@typescript-eslint/parser](https://i.imgur.com/9BdhAj0.png)
 
@@ -23,13 +33,25 @@ The file must be included in at least one of the projects provided
 
 - 最簡單的解決方式是把 `.eslintrc.js` 放到 `.eslintignore` 中，這樣 ESLint 就不會去解析 `.eslintrc.js` 這支檔案。
 - 如果需要 lint 這隻檔案，但不需要出現 type-aware linting，則可以使用 ESLint 提供的 overrides 設定（可參考[這裡](https://stackoverflow.com/a/64488474/5135452)）
-- 
 
 #### 參考
 
 - [I get errors telling me "The file must be included in at least one of the projects provided"](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/TYPED_LINTING.md#getting-started---linting-with-type-information) @ typescript-eslint Github
 - [Getting Started - Linting with Type Information](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/TYPED_LINTING.md) @ typescript-eslint Github
 
+### eslint-config-airbnb-typescript
+
+> [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)：安裝與設定方式 @ Github
+
+#### 錯誤處理："The file must be included in at least one of the projects provided"
+
+> [I get this error when running ESLint: "The file must be included in at least one of the projects provided"](https://github.com/iamturns/eslint-config-airbnb-typescript#i-get-this-error-when-running-eslint-the-file-must-be-included-in-at-least-one-of-the-projects-provided) @ eslint-config-airbnb-typescript
+
+### eslint-plugin-eslint-comments
+
+針對的是 ESLint 在檔案中提供的指令，例如 `eslint-disable`
+
 ## Lint Staged
 
 - from lint-staged v10, `git add` part is automatic and not necessary to include in configuration. [Some of your tasks use git add command.(#775)](https://github.com/okonet/lint-staged/issues/775)
+
