@@ -18,11 +18,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jest/recommended',
-
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#eslint-configs
-    // 如果已經有使用 airbnb-typescript，就不需要加上下面這行
-    // 'plugin:@typescript-eslint/recommended'
-
+    'plugin:@typescript-eslint/recommended',
     // 讓 @typescript-eslint 能夠在 Lint 顯示型別資訊
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:prettier/recommended',
