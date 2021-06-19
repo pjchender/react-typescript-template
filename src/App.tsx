@@ -1,28 +1,26 @@
 import './App.css';
 
-import Foo from './Foo';
-import logo from './logo.svg';
+import { Link, Route, Switch } from 'react-router-dom';
+import Homepage from 'views/Homepage';
 
-function App() {
+const App = (): JSX.Element => {
   return (
     <div className="App">
-      <header className="App-header">
-        <Foo title="React" />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Switch>
+        <Route path="/">
+          <Homepage />
+        </Route>
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;
