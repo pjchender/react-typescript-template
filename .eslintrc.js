@@ -81,10 +81,7 @@ module.exports = {
      * 避免出現 'React' was used before it was defined 的錯誤
      * Use function hoisting to improve code readability
      */
-    'no-use-before-define': [
-      'error',
-      { functions: false, classes: true, variables: true },
-    ],
+    'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': [
       'error',
       { functions: false, classes: true, variables: true, typedefs: true },
