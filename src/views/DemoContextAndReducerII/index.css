@@ -1,0 +1,22 @@
+.color-palette {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+.color-adjust label {
+  margin: 1.5rem auto;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.color-adjust label > span {
+  margin-right: 1rem;
+  min-width: 3rem;
+  text-align: left;
+}
+
+.color-adjust label > input {
+  width: 100%;
+}

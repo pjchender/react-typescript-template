@@ -17,10 +17,11 @@ const DemoContext = (): JSX.Element => {
         ...themes[currentTheme],
       }}
     >
+      <h1>DemoContext</h1>
+      <p>最基本的 Context</p>
       <button type="button" onClick={handleClick}>
         Change Theme
       </button>
-      <h1>DemoContext</h1>
     </main>
   );
 };

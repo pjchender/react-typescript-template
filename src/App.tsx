@@ -3,6 +3,7 @@ import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 import DemoContext from 'views/DemoContext';
 import DemoContextAndReducerI from 'views/DemoContextAndReducerI';
+import DemoContextAndReducerII from 'views/DemoContextAndReducerII';
 import DemoCustomHooks from 'views/DemoCustomHooks';
 import DemoRenderProps from 'views/DemoRenderProps';
 import Homepage from 'views/Homepage';
@@ -27,6 +28,9 @@ const App = (): JSX.Element => {
           <li>
             <Link to="/use-context-reducer-i">useContext + useReducer I</Link>
           </li>
+          <li>
+            <Link to="/use-context-reducer-ii">useContext + useReducer II</Link>
+          </li>
         </ul>
       </nav>
 
@@ -45,6 +49,10 @@ const App = (): JSX.Element => {
 
         <Route path="/use-context-reducer-i">
           <DemoContextAndReducerI />
+        </Route>
+
+        <Route path="/use-context-reducer-ii">
+          <DemoContextAndReducerII />
         </Route>
 
         <Route path="/">
