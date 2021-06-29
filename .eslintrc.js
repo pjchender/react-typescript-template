@@ -75,7 +75,7 @@ module.exports = {
 
     // '@typescript-eslint/no-use-before-define': ['error'],
     /* 必須建議使用 default export */
-    // 'import/prefer-default-export': 'warn',
+    'import/prefer-default-export': 'off',
 
     /**
      * 避免出現 'React' was used before it was defined 的錯誤
