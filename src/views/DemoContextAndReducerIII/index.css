@@ -1,0 +1,17 @@
+.demo-context-and-reducer-async ul {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.demo-context-and-reducer-async ul > li {
+  list-style: none;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.demo-context-and-reducer-async ul > li:last-child {
+  border-bottom: 0;
+}
