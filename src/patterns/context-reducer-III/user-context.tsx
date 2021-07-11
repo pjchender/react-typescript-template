@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useReducer } from 'react';
 
 import { apiFetchUsers } from './api';
-import { DispatchType, StateType, userReducer } from './reducer';
+import { DispatchType, StateType, STATUS, userReducer } from './reducer';
 
 interface UserContextType {
   state: StateType;
@@ -13,7 +13,10 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 
 // STEP 3: 建立包含有 reducer 的 context provider
 const UserProvider = ({ children }: { children: React.ReactNode }): JSX.Element => {
-  const [state, dispatch] = useReducer(userReducer, { users: [] });
+  const [state, dispatch] = useReducer(userReducer, {
+    users: [],
+    status: STATUS.LOADING,
+  });
   const value = { state, dispatch };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
@@ -37,8 +40,23 @@ const useUser = (): IUserUser => {
 
   // STEP 5-2: 建立 actions（所有非同步的操作和 dispatch 都需放在 actions 中）
   const fetchUsers = useCallback(async () => {
-    const data = await apiFetchUsers();
-    dispatch({ type: 'UPDATE_USERS', payload: { users: data } });
+    try {
+      dispatch({ type: 'UPDATE_STATUS', payload: { status: STATUS.LOADING } });
+      const data = await apiFetchUsers();
+      dispatch({
+        type: 'UPDATE_USERS',
+        payload: { users: data, status: STATUS.SUCCESS },
+      });
+    } catch (error: unknown) {
+      // eslint-disable-next-line no-console, @typescript-eslint/restrict-template-expressions
+      console.error(`[user-context] fetchUsers: something go wrong ${error}`);
+      dispatch({
+        type: 'UPDATE_STATUS',
+        payload: {
+          status: STATUS.ERROR,
+        },
+      });
+    }
   }, [dispatch]);
 
   const deleteUser = useCallback(

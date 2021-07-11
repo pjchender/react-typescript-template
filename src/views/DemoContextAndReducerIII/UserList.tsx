@@ -1,5 +1,6 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable no-console */
+import { STATUS } from 'patterns/context-reducer-III/reducer';
 import { useUser } from 'patterns/context-reducer-III/user-context';
 import { useEffect } from 'react';
 
@@ -22,15 +23,17 @@ const UserList = (): JSX.Element => {
       <button type="button" onClick={() => fetchUsers()}>
         Fetch Users
       </button>
+      {state.status === STATUS.LOADING && <p>Loading...</p>}
       <ul>
-        {users.map(user => (
-          <li key={user.id}>
-            {user.name}
-            <button type="button" onClick={() => deleteUser(user.id)}>
-              X
-            </button>
-          </li>
-        ))}
+        {state.status === STATUS.SUCCESS &&
+          users.map(user => (
+            <li key={user.id}>
+              {user.name}
+              <button type="button" onClick={() => deleteUser(user.id)}>
+                X
+              </button>
+            </li>
+          ))}
       </ul>
     </div>
   );
