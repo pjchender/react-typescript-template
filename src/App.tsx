@@ -11,6 +11,7 @@ const DemoContextAndReducerAsync = lazy(() => import('views/DemoContextAndReduce
 const DemoCustomHooks = lazy(() => import('views/DemoCustomHooks'));
 const DemoRenderProps = lazy(() => import('views/DemoRenderProps'));
 const DemoCallbackRef = lazy(() => import('views/DemoCallbackRef'));
+const DemoPortal = lazy(() => import('views/DemoPortal'));
 
 const App = (): JSX.Element => {
   return (
@@ -22,6 +23,9 @@ const App = (): JSX.Element => {
           </li>
           <li>
             <Link to="/render-props">RenderProps</Link>
+          </li>
+          <li>
+            <Link to="/portal">Portal</Link>
           </li>
           <li>
             <Link to="/custom-hooks">CustomHooks</Link>
@@ -48,6 +52,10 @@ const App = (): JSX.Element => {
         <Switch>
           <Route path="/render-props">
             <DemoRenderProps />
+          </Route>
+
+          <Route path="/portal">
+            <DemoPortal />
           </Route>
 
           <Route path="/custom-hooks">
