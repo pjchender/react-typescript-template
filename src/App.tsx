@@ -10,6 +10,7 @@ const DemoContextAndReducerII = lazy(() => import('views/DemoContextAndReducerII
 const DemoContextAndReducerAsync = lazy(() => import('views/DemoContextAndReducerIII'));
 const DemoCustomHooks = lazy(() => import('views/DemoCustomHooks'));
 const DemoRenderProps = lazy(() => import('views/DemoRenderProps'));
+const DemoCallbackRef = lazy(() => import('views/DemoCallbackRef'));
 
 const App = (): JSX.Element => {
   return (
@@ -36,6 +37,9 @@ const App = (): JSX.Element => {
           </li>
           <li>
             <Link to="/use-context-reducer-iii">useContext + useReducer III</Link>
+          </li>
+          <li>
+            <Link to="/callback-ref">callback + ref</Link>
           </li>
         </ul>
       </nav>
@@ -64,6 +68,10 @@ const App = (): JSX.Element => {
 
           <Route path="/use-context-reducer-iii">
             <DemoContextAndReducerAsync />
+          </Route>
+
+          <Route path="/callback-ref">
+            <DemoCallbackRef />
           </Route>
 
           <Route path="/">
