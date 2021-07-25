@@ -1,4 +1,3 @@
-/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable no-console */
 import { STATUS } from 'patterns/context-reducer-III/reducer';
 import { useUser } from 'patterns/context-reducer-III/user-context';
