@@ -1,17 +1,9 @@
 import './App.css';
 
-import { lazy, Suspense } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
-import Homepage from 'views/Homepage';
+import { Suspense } from 'react';
+import { Link } from 'react-router-dom';
 
-const DemoContext = lazy(() => import('views/DemoContext'));
-const DemoContextAndReducerI = lazy(() => import('views/DemoContextAndReducerI'));
-const DemoContextAndReducerII = lazy(() => import('views/DemoContextAndReducerII'));
-const DemoContextAndReducerAsync = lazy(() => import('views/DemoContextAndReducerIII'));
-const DemoCustomHooks = lazy(() => import('views/DemoCustomHooks'));
-const DemoRenderProps = lazy(() => import('views/DemoRenderProps'));
-const DemoCallbackRef = lazy(() => import('views/DemoCallbackRef'));
-const DemoPortal = lazy(() => import('views/DemoPortal'));
+import { Router, routes } from './routes';
 
 const App = (): JSX.Element => {
   return (
@@ -49,43 +41,7 @@ const App = (): JSX.Element => {
       </nav>
 
       <Suspense fallback={<h2>Dynamic Loading...</h2>}>
-        <Switch>
-          <Route path="/render-props">
-            <DemoRenderProps />
-          </Route>
-
-          <Route path="/portal">
-            <DemoPortal />
-          </Route>
-
-          <Route path="/custom-hooks">
-            <DemoCustomHooks />
-          </Route>
-
-          <Route path="/use-context">
-            <DemoContext />
-          </Route>
-
-          <Route path="/use-context-reducer-i">
-            <DemoContextAndReducerI />
-          </Route>
-
-          <Route path="/use-context-reducer-ii">
-            <DemoContextAndReducerII />
-          </Route>
-
-          <Route path="/use-context-reducer-iii">
-            <DemoContextAndReducerAsync />
-          </Route>
-
-          <Route path="/callback-ref">
-            <DemoCallbackRef />
-          </Route>
-
-          <Route path="/">
-            <Homepage />
-          </Route>
-        </Switch>
+        <Router routes={routes} />
       </Suspense>
     </div>
   );
