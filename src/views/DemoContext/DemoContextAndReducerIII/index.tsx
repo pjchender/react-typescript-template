@@ -1,7 +1,8 @@
 import './index.css';
 
 import { UserProvider } from 'patterns/context-reducer-III/user-context';
-import UserList from 'views/DemoContextAndReducerIII/UserList';
+
+import UserList from './UserList';
 
 const DemoContextAndReducerAsync = (): JSX.Element => {
   return (

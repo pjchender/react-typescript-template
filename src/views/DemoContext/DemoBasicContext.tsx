@@ -1,7 +1,6 @@
 // https://frontendmasters.com/courses/react-typescript/
+import { THEME, ThemeContext } from 'patterns/context/theme-context';
 import { useContext, useState } from 'react';
-
-import { THEME, ThemeContext } from '../patterns/context/theme-context';
 
 const DemoContext = (): JSX.Element => {
   const [currentTheme, setCurrentTheme] = useState<THEME>(THEME.LIGHT);

@@ -6,7 +6,7 @@ import { ComponentType, lazy, LazyExoticComponent, ReactNode, Suspense } from 'r
 import { Route, Switch } from 'react-router-dom';
 import Homepage from 'views/Homepage';
 
-interface IRoute {
+export interface IRoute {
   path: string;
   exact?: boolean;
   fallback: NonNullable<ReactNode> | null;
@@ -43,21 +43,28 @@ export const routes: IRoute[] = [
     path: '/use-context',
     component: lazy(() => import('views/DemoContext')),
     fallback: Fallback,
-  },
-  {
-    path: '/use-context-reducer-i',
-    component: lazy(() => import('views/DemoContextAndReducerI')),
-    fallback: Fallback,
-  },
-  {
-    path: '/use-context-reducer-ii',
-    component: lazy(() => import('views/DemoContextAndReducerII')),
-    fallback: Fallback,
-  },
-  {
-    path: '/use-context-reducer-iii',
-    component: lazy(() => import('views/DemoContextAndReducerIII')),
-    fallback: Fallback,
+    routes: [
+      {
+        path: '/use-context/basic',
+        component: lazy(() => import('views/DemoContext/DemoBasicContext')),
+        fallback: Fallback,
+      },
+      {
+        path: '/use-context/use-context-reducer-i',
+        component: lazy(() => import('views/DemoContext/DemoContextAndReducerI')),
+        fallback: Fallback,
+      },
+      {
+        path: '/use-context/use-context-reducer-ii',
+        component: lazy(() => import('views/DemoContext/DemoContextAndReducerII')),
+        fallback: Fallback,
+      },
+      {
+        path: '/use-context/use-context-reducer-iii',
+        component: lazy(() => import('views/DemoContext/DemoContextAndReducerIII')),
+        fallback: Fallback,
+      },
+    ],
   },
   {
     path: '/callback-ref',

@@ -26,15 +26,6 @@ const App = (): JSX.Element => {
             <Link to="/use-context">useContext</Link>
           </li>
           <li>
-            <Link to="/use-context-reducer-i">useContext + useReducer I</Link>
-          </li>
-          <li>
-            <Link to="/use-context-reducer-ii">useContext + useReducer II</Link>
-          </li>
-          <li>
-            <Link to="/use-context-reducer-iii">useContext + useReducer III</Link>
-          </li>
-          <li>
             <Link to="/callback-ref">callback + ref</Link>
           </li>
         </ul>
