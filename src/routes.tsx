@@ -10,6 +10,7 @@ export interface IRoute {
   path: string;
   exact?: boolean;
   fallback: NonNullable<ReactNode> | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component?: LazyExoticComponent<ComponentType<any>> | ComponentType<any>;
   routes?: IRoute[];
   redirect?: string;
@@ -22,54 +23,54 @@ export const routes: IRoute[] = [
     path: '/',
     exact: true,
     component: Homepage,
-    fallback: Fallback,
+    fallback: <Fallback />,
   },
   {
     path: '/render-props',
     component: lazy(() => import('views/DemoRenderProps')),
-    fallback: Fallback,
+    fallback: <Fallback />,
   },
   {
     path: '/portal',
     component: lazy(() => import('views/DemoPortal')),
-    fallback: Fallback,
+    fallback: <Fallback />,
   },
   {
     path: '/custom-hooks',
     component: lazy(() => import('views/DemoCustomHooks')),
-    fallback: Fallback,
+    fallback: <Fallback />,
   },
   {
     path: '/use-context',
     component: lazy(() => import('views/DemoContext')),
-    fallback: Fallback,
+    fallback: <Fallback />,
     routes: [
       {
         path: '/use-context/basic',
         component: lazy(() => import('views/DemoContext/DemoBasicContext')),
-        fallback: Fallback,
+        fallback: <Fallback />,
       },
       {
         path: '/use-context/use-context-reducer-i',
         component: lazy(() => import('views/DemoContext/DemoContextAndReducerI')),
-        fallback: Fallback,
+        fallback: <Fallback />,
       },
       {
         path: '/use-context/use-context-reducer-ii',
         component: lazy(() => import('views/DemoContext/DemoContextAndReducerII')),
-        fallback: Fallback,
+        fallback: <Fallback />,
       },
       {
         path: '/use-context/use-context-reducer-iii',
         component: lazy(() => import('views/DemoContext/DemoContextAndReducerIII')),
-        fallback: Fallback,
+        fallback: <Fallback />,
       },
     ],
   },
   {
     path: '/callback-ref',
     component: lazy(() => import('views/DemoCallbackRef')),
-    fallback: Fallback,
+    fallback: <Fallback />,
   },
 ];
 

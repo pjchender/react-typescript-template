@@ -1,8 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "src/**/*.ts",
-    "src/**/*.js",
     "next-env.d.ts",
     ".eslintrc.js",
     "**/*.js",
