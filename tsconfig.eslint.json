@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "next-env.d.ts",
+    ".eslintrc.js",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  // exclude 是把已經在 include 中有設定的檔案 exclude 掉，而不是從整個 codebase exclude
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts"
+  ]
+}
